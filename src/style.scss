@@ -1,0 +1,198 @@
+$color-base: #416dff;
+$color-font: #909090;
+$breakpoint-tablet: 621px;
+$breakpoint-desktop: 861px;
+$card-shadow: drop-shadow(0 1px 10px rgba(0, 0, 0, 0.25));
+
+body {
+  margin: 0;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  color: $color-font;
+}
+
+.block {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 960px;
+  margin: 140px auto 25px;
+  @media (min-width: $breakpoint-tablet) {
+    margin-top: 110px;
+  }
+  @media (min-width: $breakpoint-desktop) {
+    margin-top: 90px;
+  }
+}
+
+.topBar {
+  position: fixed;
+  top: 0;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  z-index: 100;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 25px 15px;
+}
+
+.button {
+  border-radius: 25px;
+  border: none;
+  background-color: $color-base;
+  color: #ffffff;
+  padding: 5px 25px;
+}
+
+.inputStyle {
+  width: 20rem;
+  background: #f0f0f0;
+  border: solid 2px $color-font;
+  border-radius: 25px;
+  padding: 0.5rem;
+  margin: 10px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+// START: userCard
+.userCard {
+  background-color: #ffffff;
+  box-sizing: border-box;
+  border-radius: 5px;
+  color: $color-font;
+  width: 100%;
+  padding-bottom: 30px;
+  margin: 10px;
+  filter: $card-shadow;
+  overflow: hidden;
+  @media (min-width: $breakpoint-tablet) {
+    width: calc(50% - 20px);
+  }
+  @media (min-width: $breakpoint-desktop) {
+    width: calc(33.3333% - 20px);
+  }
+}
+
+.userCard-hd {
+  background-color: $color-base;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 100;
+  padding: 15px 5px 55px;
+  position: relative;
+  z-index: 0;
+}
+
+.userCard-hd_iconLeft > *:first-child {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.userCard-image {
+  border: solid 4px #ffffff;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 120px;
+  height: 120px;
+  margin: -45px auto 0;
+  position: relative;
+  z-index: 100;
+  filter: $card-shadow;
+}
+
+.userCard-info {
+  font-family: TimesNewRoman;
+  padding-top: 5px;
+  & > * {
+    padding-top: 15px;
+  }
+}
+// END: userCard
+
+.editButton {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  width: 25px;
+  height: 25px;
+}
+
+// Using simple modal to contain the edit user form
+// START: Modal-Styling
+.modal {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  z-index: 500;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.editModal {
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  padding: 15px 25px 20px;
+  width: 100%;
+  @media (min-width: $breakpoint-tablet) {
+    border-radius: 5px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 620px;
+  }
+}
+
+.editModal > * {
+  margin: 5px 10px;
+  width: 100%;
+  text-align: left;
+  @media (min-width: $breakpoint-tablet) {
+    width: calc(50% - 20px);
+  }
+}
+
+.editModal-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.editModal > *:last-child {
+  padding: 15px 25px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.editModal-input_full {
+  width: 100%;
+}
+
+.editModal-input > * {
+  margin-top: 5px;
+  width: 100%;
+}
+
+.editModal-button {
+  border-radius: 25px;
+  border: none;
+  background-color: $color-base;
+  color: #ffffff;
+  padding: 15px 25px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.editModal-button_cancel {
+  background-color: $color-font;
+}
+// END: Modal-Style
